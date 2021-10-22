@@ -5,6 +5,10 @@
   justify-content: flex-end;
 }
 
+.location {
+  font-weight: $font-bold;
+}
+
 #menuToggle {
   display: block;
   position: relative;
@@ -52,7 +56,7 @@
   margin-bottom: 5px;
   position: relative;
 
-  background: $light-text-color;
+  background: $dark-text-color;
   border-radius: 2px;
 
   z-index: 1;

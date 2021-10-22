@@ -1,0 +1,22 @@
+@import '../../Settings.scss';
+
+.weather-temp-box {
+  border-bottom: 4px solid $dark-text-color;
+  border-radius: 2px;
+}
+
+.weather-temp {
+  font-size: 92px;
+  font-weight: $font-bold;
+
+  span {
+    font-size: 24px;
+    font-weight: $font-normal;
+  }
+}
+
+.weather-description {
+  font-size: 24px;
+  font-weight: $font-normal;
+  padding: 8px 0 24px 0;
+}

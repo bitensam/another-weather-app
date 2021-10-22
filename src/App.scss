@@ -12,7 +12,9 @@ body {
   font-family: $font;
   font-size: 14px;
   font-weight: $font-light;
-  color: $light-text-color;
+  color: $dark-text-color;
+  letter-spacing: 0.1px;
+  background-color: $light-text-color;
 }
 
 .app {
@@ -22,17 +24,43 @@ body {
 }
 
 .cold {
-  background-color: $cold-color;
+  background: rgb(50, 224, 196);
+  background: radial-gradient(
+    circle,
+    rgba(50, 224, 196, 1) 0%,
+    rgba(238, 238, 238, 1) 46%
+  );
+  background-position: 100px -150px;
 }
 
 .warm {
-  background-color: $warm-color;
+  background: rgb(249, 178, 8);
+  background: radial-gradient(
+    circle,
+    rgba(249, 178, 8, 1) 0%,
+    rgba(238, 238, 238, 1) 48%
+  );
+  background-position: 0px -200px;
+  background-repeat: no-repeat;
 }
 
 .rain {
-  background-color: $rain-color;
+  background: rgb(28, 12, 91);
+  background: radial-gradient(
+    circle,
+    rgba(28, 12, 91, 1) 2%,
+    rgba(238, 238, 238, 1) 88%
+  );
+  background-position: 0px -300px;
+  background-repeat: no-repeat;
 }
 
 .chilly {
-  background-color: $chilly-color;
+  background: rgb(21, 151, 229);
+  background: radial-gradient(
+    circle,
+    rgba(21, 151, 229, 1) 2%,
+    rgba(238, 238, 238, 1) 49%
+  );
+  background-position: 75px -140px;
 }
