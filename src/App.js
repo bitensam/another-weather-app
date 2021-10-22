@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div className='app chilly'>
       <Container>
-        <Grid container spacing={48}>
+        <Grid container spacing={54}>
           <Grid item xs={12}>
             <Navbar />
           </Grid>

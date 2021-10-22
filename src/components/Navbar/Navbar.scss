@@ -4,8 +4,11 @@
   display: flex;
   justify-content: flex-end;
 }
-
+.date {
+  font-size: 14px;
+}
 .location {
+  font-size: 18px;
   font-weight: $font-bold;
 }
 
