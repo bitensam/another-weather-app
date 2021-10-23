@@ -4,14 +4,14 @@ import './WeatherDays.scss';
 // ui domponents
 import { Grid } from '@mui/material';
 import {
-  TiWeatherSunny,
-  TiWeatherSnow,
-  TiWeatherStormy,
-  TiWeatherShower,
-  TiWeatherCloudy,
-  TiWeatherPartlySunny,
-  TiWeatherWindy,
-} from 'react-icons/ti';
+  WiDaySunny,
+  WiDaySnow,
+  WiDayStormShowers,
+  WiDayShowers,
+  WiDayCloudy,
+  // WiFog,
+  // WiDayWindy,
+} from 'react-icons/wi';
 
 const WeatherDays = () => {
   return (
@@ -19,11 +19,28 @@ const WeatherDays = () => {
       <Grid container spacing={1}>
         <Grid item xs>
           <Grid item xs={12}>
+            <div className='weather-days-temp'>
+              <p>11*C</p>
+            </div>
+          </Grid>
+          <Grid item xs={12}>
+            <div className='weather-days-icon'>
+              <WiDaySunny />
+            </div>
+          </Grid>
+          <Grid item xs={12}>
+            <div className='weather-days-weekday'>
+              <p>Mon</p>
+            </div>
+          </Grid>
+        </Grid>
+        <Grid item xs>
+          <Grid item xs={12}>
             <div className='weather-days-temp'>11*C</div>
           </Grid>
           <Grid item xs={12}>
             <div className='weather-days-icon'>
-              <TiWeatherPartlySunny />
+              <WiDayStormShowers />
             </div>
           </Grid>
           <Grid item xs={12}>
@@ -36,7 +53,7 @@ const WeatherDays = () => {
           </Grid>
           <Grid item xs={12}>
             <div className='weather-days-icon'>
-              <TiWeatherCloudy />
+              <WiDaySnow />
             </div>
           </Grid>
           <Grid item xs={12}>
@@ -49,7 +66,7 @@ const WeatherDays = () => {
           </Grid>
           <Grid item xs={12}>
             <div className='weather-days-icon'>
-              <TiWeatherSnow />
+              <WiDayCloudy />
             </div>
           </Grid>
           <Grid item xs={12}>
@@ -62,46 +79,7 @@ const WeatherDays = () => {
           </Grid>
           <Grid item xs={12}>
             <div className='weather-days-icon'>
-              <TiWeatherWindy />
-            </div>
-          </Grid>
-          <Grid item xs={12}>
-            <div className='weather-days-weekday'>Mon</div>
-          </Grid>
-        </Grid>
-        <Grid item xs>
-          <Grid item xs={12}>
-            <div className='weather-days-temp'>11*C</div>
-          </Grid>
-          <Grid item xs={12}>
-            <div className='weather-days-icon'>
-              <TiWeatherShower />
-            </div>
-          </Grid>
-          <Grid item xs={12}>
-            <div className='weather-days-weekday'>Mon</div>
-          </Grid>
-        </Grid>
-        <Grid item xs>
-          <Grid item xs={12}>
-            <div className='weather-days-temp'>11*C</div>
-          </Grid>
-          <Grid item xs={12}>
-            <div className='weather-days-icon'>
-              <TiWeatherSunny />
-            </div>
-          </Grid>
-          <Grid item xs={12}>
-            <div className='weather-days-weekday'>Mon</div>
-          </Grid>
-        </Grid>
-        <Grid item xs>
-          <Grid item xs={12}>
-            <div className='weather-days-temp'>11*C</div>
-          </Grid>
-          <Grid item xs={12}>
-            <div className='weather-days-icon'>
-              <TiWeatherStormy />
+              <WiDayShowers />
             </div>
           </Grid>
           <Grid item xs={12}>

@@ -14,6 +14,18 @@ const WeatherBox = () => {
           <div className='weather-temp'>
             28<span>*C</span>
           </div>
+          <div className='weather-temp-details'>
+            <div className='weather-temp-wind-speed'>
+              <p>
+                wind speed: <span>15 km/h</span>
+              </p>
+            </div>
+            <div className='weather-temp-visibility'>
+              <p>
+                visibility: <span>89%</span>
+              </p>
+            </div>
+          </div>
         </Grid>
         <Grid item xs={12}>
           <div className='weather-description'>Clear and sunny</div>

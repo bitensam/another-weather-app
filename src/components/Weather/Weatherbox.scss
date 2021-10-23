@@ -3,6 +3,8 @@
 .weather-temp-box {
   border-bottom: 4px solid $dark-text-color;
   border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .weather-temp {
@@ -15,8 +17,28 @@
   }
 }
 
+.weather-temp-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  font-size: 14px;
+}
+
 .weather-description {
   font-size: 32px;
   font-weight: $font-normal;
   padding: 8px 0 24px 0;
+}
+
+.weather-temp-wind-speed {
+  span {
+    font-weight: $font-normal;
+  }
+}
+
+.weather-temp-visibility {
+  span {
+    font-weight: $font-normal;
+  }
 }
