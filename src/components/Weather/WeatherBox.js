@@ -9,7 +9,7 @@ import { Grid } from '@mui/material';
 const WeatherBox = () => {
   return (
     <div className='weather-box'>
-      <Grid spacing={2}>
+      <Grid>
         <Grid className='weather-temp-box' item xs={12}>
           <div className='weather-temp'>
             28<span>*C</span>

@@ -14,4 +14,4 @@ I wanted to achieve a nice and clean modern look.
 
 First I have made the nav section, and at the beginig I was struggling a lot with RWD and buggers. Then I have made the other data-like sections and fell it with dummy data. Then
 
-cdn.
+tbc.

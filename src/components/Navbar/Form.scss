@@ -1,0 +1,37 @@
+@import '../../Settings.scss';
+
+.nav-menu-item {
+  margin-bottom: 3rem !important;
+
+  input {
+    padding: 0.8rem 0.5rem;
+    font-size: 1.5rem;
+    width: 100%;
+    border: 0.5px solid $dark-text-color;
+    border-radius: 15px;
+    background-color: $light-text-color;
+    color: $dark-text-color;
+    font-family: $font;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    padding: 0.8rem 0.5rem;
+    font-size: 1.5rem;
+    width: 100%;
+    border: 0.5px solid $dark-text-color;
+    border-radius: 15px;
+    background: rgb(230, 233, 91);
+    background: linear-gradient(
+      circle,
+      rgb(230, 233, 91) 0%,
+      rgba(238, 238, 238, 1) 68%
+    );
+    background-position: 0px -80px;
+    color: $dark-text-color;
+    font-family: $font;
+    font-weight: $font-bold;
+  }
+}

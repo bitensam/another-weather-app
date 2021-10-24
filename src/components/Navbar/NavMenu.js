@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+//components
+import Form from './Form';
 //styles
 import './NavMenu.scss';
 //ui components
@@ -24,14 +26,17 @@ const NavMenu = (props) => {
         <Grid className='nav-menu-item' item xs={12}>
           <p>Search by City:</p>
         </Grid>
-        <Grid className='nav-menu-item' item xs={12}>
-          <input type='text' placeholder='ex: London, UK'></input>
-        </Grid>
-        <Grid className='nav-menu-item' item xs={12}>
-          <button onClick={props.closeBurger} type='submit'>
-            Search...
-          </button>
-        </Grid>
+        <Form closeBurger={props.closeBurger} />
+        {/* <form onSubmit={handleSubmit}>
+          <Grid className='nav-menu-item' item xs={12}>
+            <input type='text' placeholder='ex: London, UK'></input>
+          </Grid>
+          <Grid className='nav-menu-item' item xs={12}>
+            <button onClick={props.closeBurger} type='submit'>
+              Search...
+            </button>
+          </Grid>
+        </form> */}
       </Grid>
     </Menu>
   );
