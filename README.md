@@ -8,10 +8,16 @@ UI Components used to this project so far: Material UI, Hamburger React, React B
 
 1. Step - Layout
 
-I have started with an idea, then i have made some resarch in design websites. I have
+I had started with an idea, then I had made some resarch in design websites.
 
 I wanted to achieve a nice and clean modern look.
 
-First I have made the nav section, and at the beginig I was struggling a lot with RWD and buggers. Then I have made the other data-like sections and fell it with dummy data. Then
+First I had made the nav section, and at the beginig I was struggling a lot with RWD and buggers. Then I have made the other data-like sections and fell it with dummy data.
+
+2. Step - Pass data between components
+
+The first problem I encountered was passing props to the parent component. I had to pass the value entered in the field from the Form component through the NavMenu, Navbar all the way to the App.
+
+Props related to calling functions to close the mobile menu went in the opposite direction. I passed them from NavMenu to Form.
 
 tbc.

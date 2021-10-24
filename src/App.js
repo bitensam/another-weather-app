@@ -8,12 +8,16 @@ import './App.scss';
 import { Container, Grid } from '@mui/material';
 
 const App = () => {
+  const onSubmitForm = (value) => {
+    console.log('dziala:', value);
+  };
+
   return (
     <div className='app chilly'>
       <Container>
         <Grid container spacing={54}>
           <Grid item xs={12}>
-            <Navbar />
+            <Navbar submitForm={onSubmitForm} />
           </Grid>
           <Grid item xs={12}>
             <WeatherBox />

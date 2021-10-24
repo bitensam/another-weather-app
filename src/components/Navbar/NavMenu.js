@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 //components
 import Form from './Form';
+import Error from '../Utils/Error';
+import Loading from '../Utils/Loading';
+//hooks
+import useWeather from '../Utils/useWeather';
 //styles
 import './NavMenu.scss';
 //ui components
-import { Grid } from '@mui/material';
 import { push as Menu } from 'react-burger-menu';
 
-const NavMenu = (props) => {
+const NavMenu = ({ submitForm, closeBurger }) => {
   const [isOpen, setIsOpen] = useState(true);
+  const { isError, isLoading } = useWeather();
 
   const handleCloseMenu = () => {
     setIsOpen(false);
@@ -20,24 +24,13 @@ const NavMenu = (props) => {
       width={320}
       isOpen={isOpen}
       isClose={handleCloseMenu}
-      onClose={props.closeBurger}
+      onClose={closeBurger}
     >
-      <Grid container spacing={0}>
-        <Grid className='nav-menu-item' item xs={12}>
-          <p>Search by City:</p>
-        </Grid>
-        <Form closeBurger={props.closeBurger} />
-        {/* <form onSubmit={handleSubmit}>
-          <Grid className='nav-menu-item' item xs={12}>
-            <input type='text' placeholder='ex: London, UK'></input>
-          </Grid>
-          <Grid className='nav-menu-item' item xs={12}>
-            <button onClick={props.closeBurger} type='submit'>
-              Search...
-            </button>
-          </Grid>
-        </form> */}
-      </Grid>
+      {!isLoading && (
+        <Form submitForm={submitForm} closeBurger={handleCloseMenu} />
+      )}
+      {isError && Error}
+      {isLoading && Loading}
     </Menu>
   );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 //components
 import WeatherDays from './WeatherDays';
+
 // styles
 import './Weatherbox.scss';
 // ui domponents

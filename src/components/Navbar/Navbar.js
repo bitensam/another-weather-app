@@ -7,7 +7,7 @@ import './Navbar.scss';
 import { Grid } from '@mui/material';
 import { Sling as Hamburger } from 'hamburger-react';
 
-const Navbar = () => {
+const Navbar = ({ submitForm }) => {
   const [clicked, setClicked] = useState(false);
 
   const handleCloseBurger = () => {
@@ -24,7 +24,9 @@ const Navbar = () => {
         <Grid item xs={5} />
         <Grid item className='icon-menu' xs={2}>
           <Hamburger toggled={clicked} toggle={setClicked} duration={0.8} />
-          {clicked && <NavMenu closeBurger={handleCloseBurger} />}
+          {clicked && (
+            <NavMenu submitForm={submitForm} closeBurger={handleCloseBurger} />
+          )}
         </Grid>
       </Grid>
     </div>
