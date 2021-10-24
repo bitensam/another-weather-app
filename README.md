@@ -20,4 +20,6 @@ The first problem I encountered was passing props to the parent component. I had
 
 Props related to calling functions to close the mobile menu went in the opposite direction. I passed them from NavMenu to Form.
 
+I also made my own custom hook and called it use Weather. It allows, depending on the state, to render appropriate components such as loading, error or the actual application component.
+
 **tbc.**
