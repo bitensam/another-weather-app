@@ -24,5 +24,5 @@ I also made my own custom hook and called it use Weather. It allows, depending o
 
 ## **<span style="color:yellow">3. Step - Connect with api<span>**
 
-Another challenge was connecting to the Visual Crossing Weather API. By passing the location data from the Form component to the useWeather hook, I was able to query the API. One of the required query parameters was the location itself. I used the documentation on the RapidApi portal to connect to the API, retrieve the data and access the appropriate "location" array. So far I have saved the data in the constant "date".
+Another challenge was connecting to the Visual Crossing Weather API. By passing the location data from the Form component to the useWeather hook, I was able to query the API. One of the required query parameters was the location itself. I saved the location value as a constant "searchLocation". Then I used the documentation on the RapidApi portal to connect to the API, retrieve the data and access the appropriate "location" array. So far I have saved the data in the constant "date".
 **tbc.**
