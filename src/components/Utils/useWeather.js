@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import axios from 'axios';
+import Axios from 'axios';
 
 const URL = 'https://visual-crossing-weather.p.rapidapi.com/forecast';
 const HEADERS_HOST = 'visual-crossing-weather.p.rapidapi.com';
@@ -12,12 +12,16 @@ const useWeather = () => {
   // call the api
 
   const submitRequest = async (location) => {
+    const searchLocation = location;
+
+    console.log('search', searchLocation);
+
     const options = {
       method: 'GET',
       url: URL,
       params: {
         aggregateHours: '24',
-        location: { location },
+        location: searchLocation,
         contentType: 'json',
         unitGroup: 'metric',
         shortColumnNames: '0',
@@ -29,8 +33,7 @@ const useWeather = () => {
     };
     console.log({ location });
 
-    const data = await axios
-      .request(options)
+    const data = await Axios.request(options)
       .then(function (response) {
         return response.data.locations;
       })
