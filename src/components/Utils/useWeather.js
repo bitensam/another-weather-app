@@ -14,8 +14,6 @@ const useWeather = () => {
   const submitRequest = async (location) => {
     const searchLocation = location;
 
-    console.log('search', searchLocation);
-
     const options = {
       method: 'GET',
       url: URL,
@@ -31,7 +29,6 @@ const useWeather = () => {
         'x-rapidapi-key': HEADERS_API_KEY,
       },
     };
-    console.log({ location });
 
     const data = await Axios.request(options)
       .then(function (response) {
