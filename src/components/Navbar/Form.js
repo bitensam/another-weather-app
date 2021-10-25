@@ -4,20 +4,21 @@ import { Grid } from '@mui/material';
 // styles
 import './Form.scss';
 
-const Form = ({ closeBurger, submitForm }) => {
+const Form = ({ closeMenu, closeBurger, submitForm }) => {
   const [location, setLocation] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!location || location === '') return;
-    closeBurger(e);
     submitForm(location);
+    closeMenu();
+    closeBurger();
   };
 
   const handleLocationChange = (e) => {
     setLocation(e.target.value);
 
-    console.log('location is:', e.target.value);
+    // console.log('location is:', e.target.value);
   };
 
   return (

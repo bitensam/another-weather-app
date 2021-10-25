@@ -27,7 +27,11 @@ const NavMenu = ({ submitForm, closeBurger }) => {
       onClose={closeBurger}
     >
       {!isLoading && (
-        <Form submitForm={submitForm} closeBurger={handleCloseMenu} />
+        <Form
+          submitForm={submitForm}
+          closeBurger={closeBurger}
+          closeMenu={handleCloseMenu}
+        />
       )}
       {isError && Error}
       {isLoading && Loading}

@@ -2,14 +2,19 @@ import React, { useState } from 'react';
 // components
 import Navbar from './components/Navbar/Navbar';
 import WeatherBox from './components/Weather/WeatherBox';
+//hooks
+import useWeather from './components/Utils/useWeather';
 //styles
 import './App.scss';
 // ui components
 import { Container, Grid } from '@mui/material';
 
 const App = () => {
+  const { submitRequest } = useWeather();
+
   const onSubmitForm = (value) => {
-    console.log('dziala:', value);
+    console.log({ value });
+    submitRequest(value);
   };
 
   return (
