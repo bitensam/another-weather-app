@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import Axios from 'axios';
 
-const URL = 'https://visual-crossing-weather.p.rapidapi.com/forecast';
-const HEADERS_HOST = 'visual-crossing-weather.p.rapidapi.com';
-const HEADERS_API_KEY = '592a31e457mshcfc3a701f886c21p16fcc8jsnba61229d9792';
+const {
+  REACT_APP_ANOTHER_WEATHER_APP_KEY,
+  REACT_APP_ANOTHER_WEATHER_APP_HOST,
+  REACT_APP_ANOTHER_WEATHER_APP_URL,
+} = process.env;
 
 const useWeather = () => {
   const [isError, setIsError] = useState(false);
@@ -16,7 +18,7 @@ const useWeather = () => {
 
     const options = {
       method: 'GET',
-      url: URL,
+      url: `${REACT_APP_ANOTHER_WEATHER_APP_URL}`,
       params: {
         aggregateHours: '24',
         location: searchLocation,
@@ -25,8 +27,8 @@ const useWeather = () => {
         shortColumnNames: '0',
       },
       headers: {
-        'x-rapidapi-host': HEADERS_HOST,
-        'x-rapidapi-key': HEADERS_API_KEY,
+        'x-rapidapi-host': `${REACT_APP_ANOTHER_WEATHER_APP_HOST}`,
+        'x-rapidapi-key': `${REACT_APP_ANOTHER_WEATHER_APP_KEY}`,
       },
     };
 
