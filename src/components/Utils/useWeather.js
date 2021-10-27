@@ -10,10 +10,9 @@ const {
 const useWeather = () => {
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [weather, setWeather] = useState(null);
 
-  // call the api
-
-  const submitRequest = async (location) => {
+  const getWeatherData = async (location) => {
     const searchLocation = location;
 
     const options = {
@@ -32,21 +31,27 @@ const useWeather = () => {
       },
     };
 
-    const data = await Axios.request(options)
-      .then(function (response) {
-        return response.data.locations;
+    const req = Axios.request(options)
+      .then((response) => {
+        console.log(response.data);
+        setWeather(response.data.locations[searchLocation]);
       })
 
-      .catch(function (error) {
-        console.error(error);
+      .catch((error) => {
+        throw error;
       });
 
-    console.log('data:', data);
+    if (req) setIsLoading(false);
+  };
 
-    if (!data || data.length === 0) {
-      setIsError('There is no such location');
-      return;
-    }
+  console.log(weather);
+
+  // call the api
+
+  const submitRequest = async (location) => {
+    setIsLoading(true);
+    setIsError(false);
+    getWeatherData(location);
   };
 
   return {

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 // components
 import Navbar from './components/Navbar/Navbar';
 import WeatherBox from './components/Weather/WeatherBox';
+import Error from './components/Utils/Error';
+import Loading from './components/Utils/Loading';
 //hooks
 import useWeather from './components/Utils/useWeather';
 //styles
@@ -10,10 +12,9 @@ import './App.scss';
 import { Container, Grid } from '@mui/material';
 
 const App = () => {
-  const { submitRequest } = useWeather();
+  const { isError, isLoading, submitRequest } = useWeather();
 
   const onSubmitForm = (value) => {
-    console.log({ value });
     submitRequest(value);
   };
 
@@ -25,7 +26,9 @@ const App = () => {
             <Navbar submitForm={onSubmitForm} />
           </Grid>
           <Grid item xs={12}>
-            <WeatherBox />
+            {!isLoading && <WeatherBox />}
+            {isError && <Error />}
+            {isLoading && <Loading />}
           </Grid>
         </Grid>
       </Container>

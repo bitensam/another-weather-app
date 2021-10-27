@@ -1,7 +1,7 @@
 import React from 'react';
 //components
 import WeatherDays from './WeatherDays';
-
+//hooks
 // styles
 import './Weatherbox.scss';
 // ui domponents
@@ -13,7 +13,8 @@ const WeatherBox = () => {
       <Grid>
         <Grid className='weather-temp-box' item xs={12}>
           <div className='weather-temp'>
-            28<span>*C</span>
+            <p></p>
+            <span>*C</span>
           </div>
           <div className='weather-temp-details'>
             <div className='weather-temp-wind-speed'>

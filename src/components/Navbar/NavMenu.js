@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 //components
 import Form from './Form';
-import Error from '../Utils/Error';
-import Loading from '../Utils/Loading';
-//hooks
-import useWeather from '../Utils/useWeather';
 //styles
 import './NavMenu.scss';
 //ui components
@@ -12,7 +8,6 @@ import { push as Menu } from 'react-burger-menu';
 
 const NavMenu = ({ submitForm, closeBurger }) => {
   const [isOpen, setIsOpen] = useState(true);
-  const { isError, isLoading } = useWeather();
 
   const handleCloseMenu = () => {
     setIsOpen(false);
@@ -26,15 +21,11 @@ const NavMenu = ({ submitForm, closeBurger }) => {
       isClose={handleCloseMenu}
       onClose={closeBurger}
     >
-      {!isLoading && (
-        <Form
-          submitForm={submitForm}
-          closeBurger={closeBurger}
-          closeMenu={handleCloseMenu}
-        />
-      )}
-      {isError && Error}
-      {isLoading && Loading}
+      <Form
+        submitForm={submitForm}
+        closeBurger={closeBurger}
+        closeMenu={handleCloseMenu}
+      />
     </Menu>
   );
 };
