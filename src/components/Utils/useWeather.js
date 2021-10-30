@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Axios from 'axios';
 
+import getCurrentDayWeather from './getCurrentDayWeather';
+
 const {
   REACT_APP_ANOTHER_WEATHER_APP_KEY,
   REACT_APP_ANOTHER_WEATHER_APP_HOST,
@@ -10,7 +12,7 @@ const {
 const useWeather = () => {
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [weather, setWeather] = useState(null);
+  const [weather, setWeather] = useState({});
 
   const getWeatherData = async (location) => {
     const searchLocation = location;
@@ -31,32 +33,43 @@ const useWeather = () => {
       },
     };
 
-    const req = Axios.request(options)
-      .then((response) => {
-        console.log(response.data);
-        setWeather(response.data.locations[searchLocation]);
-      })
+    const req = Axios.request(options);
+    const dataPromise = await req
+      .then((response) => response.data.locations[searchLocation])
 
       .catch((error) => {
         throw error;
       });
-
-    if (req) setIsLoading(false);
+    return dataPromise;
   };
 
-  console.log(weather);
-
   // call the api
+
+  const gatherWeatherData = (data) => {
+    const currentDay = getCurrentDayWeather(
+      data.currentConditions,
+      data.address
+    );
+
+    console.log(data);
+    setWeather(currentDay);
+    setIsLoading(false);
+  };
 
   const submitRequest = async (location) => {
     setIsLoading(true);
     setIsError(false);
-    getWeatherData(location);
+    const data = await getWeatherData(location);
+
+    if (!data) return;
+
+    gatherWeatherData(data);
   };
 
   return {
     isError,
     isLoading,
+    weather,
     submitRequest,
   };
 };

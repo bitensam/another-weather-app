@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 // components
 import Navbar from './components/Navbar/Navbar';
 import WeatherBox from './components/Weather/WeatherBox';
@@ -12,7 +12,7 @@ import './App.scss';
 import { Container, Grid } from '@mui/material';
 
 const App = () => {
-  const { isError, isLoading, submitRequest } = useWeather();
+  const { isError, isLoading, submitRequest, weather } = useWeather();
 
   const onSubmitForm = (value) => {
     submitRequest(value);
@@ -23,10 +23,10 @@ const App = () => {
       <Container>
         <Grid container spacing={54}>
           <Grid item xs={12}>
-            <Navbar submitForm={onSubmitForm} />
+            <Navbar submitForm={onSubmitForm} currentWeather={weather} />
           </Grid>
           <Grid item xs={12}>
-            {!isLoading && <WeatherBox />}
+            {!isLoading && <WeatherBox currentWeather={weather} />}
             {isError && <Error />}
             {isLoading && <Loading />}
           </Grid>

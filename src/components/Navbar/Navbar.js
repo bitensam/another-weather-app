@@ -7,7 +7,7 @@ import './Navbar.scss';
 import { Grid } from '@mui/material';
 import { Sling as Hamburger } from 'hamburger-react';
 
-const Navbar = ({ submitForm }) => {
+const Navbar = ({ submitForm, currentWeather }) => {
   const [clicked, setClicked] = useState(false);
 
   const handleCloseBurger = () => {
@@ -18,8 +18,10 @@ const Navbar = ({ submitForm }) => {
     <div>
       <Grid container spacing={0}>
         <Grid item xs={5}>
-          <div className='date'>11:30 am, Fri Jan 4</div>
-          <div className='location'>Warsaw, PL</div>
+          <div className='date'>
+            {currentWeather.date}, {currentWeather.weekday}
+          </div>
+          <div className='location'>{currentWeather.location}</div>
         </Grid>
         <Grid item xs={5} />
         <Grid item className='icon-menu' xs={2}>
